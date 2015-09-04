@@ -1,1 +1,1 @@
-pip install -U -r "$(dirname $0)/../requirements.txt" --user
+pip install -U -r "$(dirname $0)/../requirements.txt"
