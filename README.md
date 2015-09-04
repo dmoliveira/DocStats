@@ -5,3 +5,7 @@
 [![Build Status](https://travis-ci.org/dmoliveira/DocStats.svg)](https://travis-ci.org/dmoliveira/My-Data-Science-Toolbox)
 
 Python Library to calculate optimized TF-IDF and other documents statistics. v.0.0.1.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dmoliveira/docstats/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
