@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Title: Tests
+# Description: This script is to run all tests project.
+# Tags: Tests, Script, Run
+
+nosetests "$(dirname $0)/../src/tests/"
