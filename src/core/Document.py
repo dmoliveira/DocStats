@@ -25,6 +25,8 @@ class Document(object):
         self.ngram = ngram
         self.tokenizer = tokenizer()
 
+        self._consume_doc(document_file_path)
+
     def _consume_doc(self, document_file_path):
         """
         Read the document and extract terms statistics.
@@ -38,7 +40,7 @@ class Document(object):
         for token in ngrams(document_tokenized, self.ngram):
             self.term_dict[token] = self.term_dict.get(token, 0) + 1
             if self.max_freq < self.term_dict[token]:
-                self.max_freq += self.term_dict[token]
+                self.max_freq = self.term_dict[token]
 
     def get_freq(self, term, prob=False):
         """
@@ -50,7 +52,7 @@ class Document(object):
         prob -- If the frequency will be returned raw
                 or in probability (default False)
         """
-        pass
+        return self.term_dict.get(term, 0)
 
     def get_terms(self, lower_threshold=0, upper_threshold=1, prob=False):
         """
@@ -63,7 +65,9 @@ class Document(object):
         prob -- If the threshold and frequency is to be 
                 analyzed raw or in probability format (default False)
         """
-        pass
+        max_freq = float(self.max_freq) if prob else 1
+        return filter(lambda token: self.term_dict[token]/max_freq >= lower_threshold and 
+                self.term_dict[token]/max_freq <= upper_threshold, self.term_dict.keys())
 
     def has_term(self, term):
         """
