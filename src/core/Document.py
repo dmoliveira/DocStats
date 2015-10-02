@@ -14,7 +14,7 @@ class Document(object):
         Keyword arguments:
         document_file_path -- Document absolute address
         tokenizer -- Tokenizer to break document text
-                     (default NLTK Standard StringTokenizer)
+                     (default NLTK StringTokenizer)
         ngram -- Number of tokens that will be analyzed in pairs (default 1)
         """
         self.document_file_path = document_file_path
